@@ -5,7 +5,7 @@ class Book(models.Model):
      title = models.CharField( max_length = 250)
      subtitle = models.CharField(max_length= 250)
      author = models.CharField( max_length = 250)
-     isbn = models.Charfield( max_length = 13)
+     isbn = models.CharField( max_length = 13)
 
      # returning the title when the models is called
      def __str__(self):
