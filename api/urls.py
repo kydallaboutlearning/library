@@ -6,6 +6,7 @@ from .views import BookApiView
 
 
 
+
 # setting urlpaterns
 urlpatterns = [
      path('', BookApiView.as_view(), name='book_list')
