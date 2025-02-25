@@ -1,3 +1,6 @@
+# Boook/models
+
+"""Importing requirements for the models"""
 from django.db import models
 
 # Create your models here.
