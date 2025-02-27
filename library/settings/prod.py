@@ -7,7 +7,7 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [".pythonanywhere.com",'127.0.0:8000',]
 
 
 INSTALLED_APPS += ["whitenoise.runserver_nostatic", 
