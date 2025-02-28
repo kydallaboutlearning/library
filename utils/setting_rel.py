@@ -1,1 +1,1 @@
-current_settings_mode = 'library.settings.prod'
+current_settings_mode = 'library.settings.dev'
