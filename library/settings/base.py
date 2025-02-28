@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # inner django apps
     'Books.apps.BooksConfig',
     'api.apps.ApiConfig',
+    'todo.apps.TodoConfig',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# setting permissiosn
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': 'rest_frameworks.permissions.AllowAny'
+}
