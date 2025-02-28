@@ -5,8 +5,8 @@ from django.utils import timezone
 class Todo(models.Model):
      task = models.CharField(max_length = 150)
      body = models.CharField(max_length = 5000)
-     start_date = models.DateTimeField(default=timezone.now())
-     end_date = models.DateTimeField(default=timezone.now())
+     start_date = models.DateTimeField()
+     end_date = models.DateTimeField()
      completed = models.BooleanField(default=False)
 
 
