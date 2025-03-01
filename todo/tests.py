@@ -31,6 +31,22 @@ class todoModelTest(TestCase):
           self.assertTrue(self.todo.completed)
 
      
+     # creating test for theapi
+     def test_todo_api_listview(self):
+          response = self.client.get(reverse('todo-list'))
+          self.assertEqual(response.status_code,status.HTTP_200_OK)
+          self.assertEqual(Todo.objects.count(),1)
+          # self.assertContains(response.content,self.todo)
+
+     # creating a test fo
+     def test_todo_api_detailview(self):
+          # getting  the response
+          response = self.client.get(reverse('todo-detail',kwargs={"pk":self.todo.id}),format ='json')
+          self.assertEqual(response.status_code, status.HTTP_200_OK)
+          self.assertEqual(Todo.objects.count(),1)
+          # self.assertContains(response,t_title)
+
+
 
           
 
