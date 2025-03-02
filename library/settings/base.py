@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'Books.apps.BooksConfig',
     'api.apps.ApiConfig',
     'todo.apps.TodoConfig',
+    'blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
@@ -131,4 +133,7 @@ CORS_ALLOWED_ORIGINS = (
 
 CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
 
+
+# adding the customuser\
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
