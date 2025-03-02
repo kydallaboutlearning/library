@@ -137,3 +137,9 @@ CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
 # adding the customuser\
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+
+# setting up the permissions for the rest_framework
+REST_FRAMEWORK = [
+     'DEFAULT_PERMISSION_CLASSES':'rest_framework.permissions.AllowAny'
+]
+
