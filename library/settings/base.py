@@ -139,7 +139,8 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 # setting up the permissions for the rest_framework
-REST_FRAMEWORK = [
-     'DEFAULT_PERMISSION_CLASSES':'rest_framework.permissions.AllowAny'
-]
+REST_FRAMEWORK = {
+     'DEFAULT_PERMISSION_CLASSES':
+     ['rest_framework.permissions.IsAuthenticated'
+                                   ],}
 
