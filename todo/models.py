@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.timesince import timeuntil
 
 # Create your models here.
 class Todo(models.Model):
@@ -10,11 +11,11 @@ class Todo(models.Model):
      completed = models.BooleanField(default=False)
 
 
-     # returning the title of the todo
+
      @property
      def duration(self):
-          duration = self.start_date - self.end_date
-          return duration
-
+          return timeuntil(d=self.start_date,now=self.end_date,depth=4)
+     
+     # returning the title of the todo
      def __str__(self):
           return self.task
