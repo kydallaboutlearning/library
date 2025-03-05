@@ -29,6 +29,8 @@ class todoModelTest(TestCase):
           self.assertEqual(self.todo.start_date,now)
           self.assertEqual(self.todo.end_date,now)
           self.assertTrue(self.todo.completed)
+          # self.assertEqual(self.todo.duration(),0 )
+     
 
      
      # creating test for theapi
