@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     # third party apps
     'rest_framework',
     'corsheaders',
+    'rest_framework.authtoken',
+    'django-allauth',
+    'django-rest-auth',
 
     # inner django apps
     'Books.apps.BooksConfig',
@@ -145,5 +148,5 @@ REST_FRAMEWORK = {
                                    ],
 'DEFAULT_AUTHENTICATION_CLASSES':
 ['rest_framework.authentication.SessionAuthentication',
- 'rest_framework.authentication.BasicAuthentication'}
+ 'rest_framework.authentication.BasicAuthentication']}
 
