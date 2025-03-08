@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
-    'django-allauth',
-    'django-rest-auth',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
 
     # inner django apps
     'Books.apps.BooksConfig',
@@ -60,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'library.urls'
@@ -75,10 +79,16 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
+
             ],
         },
     },
 ]
+
+
+SITE_ID = 1
+
 
 WSGI_APPLICATION = 'library.wsgi.application'
 
@@ -140,6 +150,9 @@ CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
 # adding the customuser\
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+
+# setting up email backend
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # setting up the permissions for the rest_framework
 REST_FRAMEWORK = {
