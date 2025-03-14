@@ -17,14 +17,11 @@ from django.contrib.auth import get_user_model
 from api.permissions import *
 
 """# Create your views here."""
+from rest_framework.viewsets import ViewSet, ModelViewSet
 
-# usserist api view
-class UserListAPi(generics.ListCreateAPIView):
-     queryset = get_user_model().objects.all()
-     serializer_class = UserSerializer
-
-#user details models 
-class UserDetailAPi(generics.RetrieveDestroyAPIView):
+# usserist api viewSET
+class UserViewSet(ModelViewSet):
      permission_classes = (IsAdmin,)
      queryset = get_user_model().objects.all()
      serializer_class = UserSerializer
+
