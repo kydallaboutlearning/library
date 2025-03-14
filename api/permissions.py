@@ -3,7 +3,7 @@
 from rest_framework import permissions
 
 # defining the permissions
-class IsAdminUserorReadOnly(permissions.BasePermission):
+class IsAuthororReadOnly(permissions.BasePermission):
      def has_permission(self, request, view):
           # only authenticated user can access the list view
           if request.user.is_authenticated:
@@ -17,4 +17,11 @@ class IsAdminUserorReadOnly(permissions.BasePermission):
                return True
           # writing permissions is only allowed for the authors
           return obj.author == request.user
+     
 
+# CREATEING A PERMSIION FOR ADMIN USERS
+class IsAdmin(permissions.BasePermission):
+     # authenticating admin users
+     def has_permission(self, request, view):
+          return request.user and request.user.is_superuser
+     
