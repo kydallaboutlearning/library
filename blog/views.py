@@ -11,10 +11,10 @@ from api.permissions import *
 class BlogListView(generics.ListCreateAPIView):
      queryset = Post.objects.all()
      serializer_class = BlogApiSerializer
-     permission_classes = (IsAdminUserorReadOnly,)
+     permission_classes = (IsAuthororReadOnly,)
 
 class BlogDetailView(generics.RetrieveUpdateDestroyAPIView):
      permission_class = permissions.IsAdminUser
      queryset = Post.objects.all()
-     permission_classes = (IsAdminUserorReadOnly,)
+     permission_classes = (IsAuthororReadOnly,)
      serializer_class = BlogApiSerializer
