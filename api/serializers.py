@@ -12,6 +12,9 @@ from todo.models import Todo
 # Importing models drom Blog
 from blog.models import Post
 
+# importing models for users
+from django.contrib.auth import get_user_model
+
 
 # Builiding the serializer
 class BookSerializer(serializers.ModelSerializer):
@@ -31,3 +34,9 @@ class BlogApiSerializer(serializers.ModelSerializer):
      class Meta:
           model = Post
           fields = '__all__'
+
+
+class UserSerializer(serializers.ModelSerializer):
+     class Meta:
+          model = get_user_model
+          fields = ('id','first_name','last_name','age','username')
