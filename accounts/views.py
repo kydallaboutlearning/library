@@ -15,6 +15,7 @@ from django.contrib.auth import get_user_model
 
 # importing permission
 from api.permissions import *
+from rest_framework.permissions import IsAdminUser
 
 """# Create your views here."""
 from rest_framework.viewsets import ViewSet, ModelViewSet
