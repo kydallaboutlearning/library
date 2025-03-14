@@ -38,5 +38,5 @@ class BlogApiSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
      class Meta:
-          model = get_user_model
+          model = get_user_model()
           fields = ('id','first_name','last_name','age','username')
